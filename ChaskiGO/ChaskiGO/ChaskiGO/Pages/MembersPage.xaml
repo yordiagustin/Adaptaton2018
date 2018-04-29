@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChaskiGO.Pages.MembersPage"
+             Icon="ic_group.png"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                
+                <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Silver">
+                    <ListView.Header>
+                        <StackLayout Orientation="Vertical" Padding="20">
+                            <Label Text="Mi Comunidad"
+                                   FontSize="Large"
+                                   FontFamily="{StaticResource RegularFontFamily}"
+                                   TextColor="{StaticResource CustomGray}"
+                                   HorizontalTextAlignment="Start"/>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowSpacing="0" Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="ic_home.png"
+                                           Aspect="AspectFit"
+                                           Grid.Column="0"
+                                           HorizontalOptions="Center"/>
+                                    <StackLayout Orientation="Vertical" Grid.Column="1">
+                                        <Label Text="Claudia Burgos"
+                                               FontSize="Medium"
+                                               TextColor="{StaticResource CustomGray}"
+                                               FontFamily="{StaticResource RegularFontFamily}"
+                                               HorizontalTextAlignment="Start"/>
+                                        <Label Text="+51 943 695 220"
+                                               FontSize="Small"
+                                               TextColor="Silver"
+                                               FontFamily="{StaticResource RegularFontFamily}"
+                                               HorizontalTextAlignment="Start"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                           <StackLayout BackgroundColor="{StaticResource ColorPrimary}" HeightRequest="50" Orientation="Horizontal">
+                                <Label Text="Añadir Miembro"
+                                       TextColor="White"
+                                       FontSize="Medium"
+                                       FontFamily="{StaticResource RegularFontFamily}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
+                           </StackLayout>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChaskiGO.Pages.HomePage"
+             BackgroundColor="{StaticResource ColorPrimary}"
+             Icon="ic_home.png">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Image x:Name="SosButton"
+                   Source="sosbutton.png"
+                   Aspect="AspectFit"
+                   HeightRequest="300"
+                   Margin="10"/>
+            <StackLayout Orientation="Vertical" Padding="20" BackgroundColor="White">
+                <Label Text="Yordi Agustin Paredes"
+                       FontFamily="{StaticResource GothamFontFamily}"
+                       TextColor="{StaticResource CustomGray}"
+                       FontSize="Medium"
+                       HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Image Source="ic_place.png"
+                               Aspect="AspectFit"
+                               HeightRequest="25"
+                               VerticalOptions="Center"/>
+                        <Label Text="El Porvenir, Perú"
+                               FontSize="Small"
+                               FontFamily="{StaticResource RegularFontFamily}"
+                               TextColor="Silver"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="¡QUIERO AYUDAR!"
+                            TextColor="{StaticResource ColorPrimary}"
+                            FontSize="Small"
+                            BackgroundColor="White"
+                            BorderColor="{StaticResource ColorPrimary}"/>
+                    <Button Text="INCIDENCIA"
+                            TextColor="{StaticResource ColorPrimary}"
+                            FontSize="Small"
+                            BackgroundColor="White"
+                            BorderColor="{StaticResource ColorPrimary}"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <Label Text="Llamada de Emergencia"
+                       FontFamily="{StaticResource GothamFontFamily}"
+                       TextColor="White"
+                       FontSize="Medium"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+                <Button Text="911"
+                        TextColor="{StaticResource ColorPrimary}"
+                        FontSize="Small"
+                        BackgroundColor="White"/>
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

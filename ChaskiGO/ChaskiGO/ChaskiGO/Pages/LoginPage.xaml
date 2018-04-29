@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChaskiGO.Pages.LoginPage"
+             BackgroundColor="{StaticResource ColorPrimary}"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30,40">
+            <StackLayout.Spacing>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform = "Android" Value="10"/>
+                    <On Platform = "iOS" Value="20"/>
+                </OnPlatform>
+            </StackLayout.Spacing>
+            <Image Margin="0,40"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Image.Source>
+                    <FileImageSource File="ChaskiGOWhite.png"/>
+                </Image.Source>
+            </Image>
+            <Entry Placeholder="Correo Electrónico"
+                   Text="{Binding User.Email}"
+                   TextColor="White"
+                   PlaceholderColor="White"
+                   FontSize="18"
+                   FontFamily="{StaticResource RegularFontFamily}"/>
+            <Entry Placeholder="Contraseña"
+                   Text="{Binding User.Password}"
+                   TextColor="White"
+                   PlaceholderColor="White"
+                   FontSize="18"
+                   IsPassword="True"
+                   FontFamily="{StaticResource RegularFontFamily}"/>
+            <Button Text="Iniciar Sesión"
+                    FontSize="Small"
+                    BackgroundColor="White"
+                    TextColor="{StaticResource ColorPrimary}"
+                    FontFamily="{StaticResource RegularFontFamily}"
+                    Margin="0,20,0,0"
+                    Command="{Binding RegisterCommand}"/>
+            <Button Text="Continuar con Facebook"
+                    FontSize="Small"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource CustomBlue}"
+                    FontFamily="{StaticResource RegularFontFamily}"
+                    Command="{Binding LoginCommand}"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                <Label Text="¿No tienes cuenta?"
+                       TextColor="White"
+                       FontSize="Small"
+                       FontFamily="{StaticResource MediumFontFamily}"/>
+                <Label Text="Registrate"
+                       TextColor="White"
+                       FontSize="Small"
+                       FontFamily="{StaticResource GothamFontFamily}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" Color="{StaticResource CustomBlue}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChaskiGO.App">
+	<Application.Resources>
+
+		<!-- Application resource dictionary -->
+
+        <ResourceDictionary>
+
+            <!--Font Families-->
+
+            <OnPlatform x:Key="LightFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">Comfortaa-Light</On>
+                <On Platform="Android">Raleway-Light.ttf#Raleway-Light</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">Comfortaa-Regular</On>
+                <On Platform="Android">Raleway-Regular.ttf#Raleway-Regular</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="MediumFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">Comfortaa-Light</On>
+                <On Platform="Android">Raleway-Medium.ttf#Raleway-Medium</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="SemiBoldFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">Comfortaa-Bold</On>
+                <On Platform="Android">Raleway-SemiBold.ttf#Raleway-SemiBold</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="BoldFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">Comfortaa-Bold</On>
+                <On Platform="Android">Raleway-Bold.ttf#Raleway-Bold</On>
+            </OnPlatform>
+
+            <OnPlatform x:Key="GothamFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS">Comfortaa-Bold</On>
+                <On Platform="Android">GothamRnd-Medium.ttf#GothamRnd-Medium</On>
+            </OnPlatform>
+
+            <!--Colors-->
+
+            <Color x:Key="ColorPrimary">#FD284E</Color>
+            <Color x:Key="CustomPurple">#9066FD</Color>
+            <Color x:Key="CustomBlue">#5872FF</Color>
+            <Color x:Key="CustomRed">#FE4857</Color>
+            <Color x:Key="CustomGray">#5D5D5D</Color>
+
+        
+            <!--Strings Format Date-->
+            <x:String x:Key="Formatdatetimelong">ddMMMyy HH:mm:ss.fff tt</x:String>
+            <x:String x:Key="Formattimewithoutseconds">{0:h:mm tt}</x:String>
+            <x:String x:Key="Formatdatetimewithoutseconds">{0:M/d/yy h:mm tt}</x:String>
+            <x:String x:Key="Formatdecimalzeroplaces">{0:0}</x:String>
+            <x:String x:Key="Formatdecimaloneplaces">{0:0.0}</x:String>
+            <x:String x:Key="Formatdecimaltwoplaces">{0:0.00}</x:String>
+            <x:String x:Key="Formatdecimalthreeplaces">{0:0.000}</x:String>
+            <x:String x:Key="Formatdecimalfourplaces">{0:0.0000}</x:String>
+            <x:String x:Key="Formatphonenumberusa">{0:(###) ###-####}</x:String>
+            <x:String x:Key="Formatcurrencyusa">{0:$#,##0.00;($#,##0.00);Zero}</x:String>
+            <x:String x:Key="Formatpercent">{0:0%}</x:String>
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
