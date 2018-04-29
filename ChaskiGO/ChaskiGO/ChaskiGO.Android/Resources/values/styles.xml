@@ -27,6 +27,8 @@
 
     <item name="android:editTextStyle">@style/editTextStyle</item>
 
+    <item name="android:colorActivatedHighlight">@android:color/transparent</item>
+
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">

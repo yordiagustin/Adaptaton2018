@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChaskiGO.Pages.AddIncidence"
+             BackgroundColor="{StaticResource ColorPrimary}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+            <Label Text="Reportar Incidencia"
+                   FontSize="30"
+                   FontFamily="{StaticResource SemiBoldFontFamily}"
+                   TextColor="White"
+                   HorizontalTextAlignment="Start"/>
+            <Label Text="Ingresa los datos de la incidencia que deseas reportar, también puedes añadir una foto para una clara evidencia. Así también, se añadirá automáticamente tu ubicación."
+                   HorizontalTextAlignment="Center"
+                   FontSize="Small"
+                   TextColor="White"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   LineBreakMode="WordWrap"/>
+            <Entry Placeholder="Título"
+                   Text="{Binding Incidence.Title}"
+                   TextColor="White"
+                   PlaceholderColor="White"
+                   FontSize="18"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   HorizontalTextAlignment="Center"/>
+            <Entry Placeholder="Descripción"
+                   Text="{Binding Incidence.Description}"
+                   TextColor="White"
+                   PlaceholderColor="White"
+                   FontSize="18"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="Agregar Foto"
+                   FontSize="Medium"
+                   TextColor="White"
+                   FontFamily="{StaticResource GothamFontFamily}"
+                   HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TakePhotoCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Image Aspect="AspectFill"
+                   HeightRequest="150"
+                   WidthRequest="150">
+                <Image.Source>
+                    <FileImageSource File="{Binding Picture.Path}"/>
+                </Image.Source>
+            </Image>
+            <Button Text="Reportar Incidencia"
+                    FontSize="Small"
+                    BackgroundColor="White"
+                    TextColor="{StaticResource ColorPrimary}"
+                    FontFamily="{StaticResource RegularFontFamily}"
+                    Margin="0,20,0,0"
+                    Command="{Binding PostIncidenceCommand}"/>
+            <ActivityIndicator Color="White" IsRunning="{Binding IsBusy}"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChaskiGO.Pages.AddContact"
+             BackgroundColor="{StaticResource ColorPrimary}"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Añadir Contacto"
+                   FontSize="Large"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   TextColor="White"
+                   HorizontalTextAlignment="Start"/>
+            <Label Text="Registra a un contacto añadiendo su número de teléfono y asignándole un nombre."
+                   HorizontalTextAlignment="Center"
+                   FontSize="Small"
+                   TextColor="White"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   LineBreakMode="WordWrap"/>
+            <Entry Placeholder="Nombre"
+                   Text="{Binding Contact.Name}"
+                   TextColor="White"
+                   PlaceholderColor="Silver"
+                   FontSize="18"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   HorizontalTextAlignment="Center"/>
+            <Entry Placeholder="Nro. de Teléfono"
+                   Text="{Binding Contact.PhoneNumber}"
+                   TextColor="White"
+                   PlaceholderColor="Silver"
+                   FontSize="18"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   HorizontalTextAlignment="Center"/>
+            <Button Text="Registrar Contacto"
+                    FontSize="Small"
+                    BackgroundColor="White"
+                    TextColor="{StaticResource ColorPrimary}"
+                    FontFamily="{StaticResource RegularFontFamily}"
+                    Margin="0,20,0,0"
+                    Command="{Binding SaveContactCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

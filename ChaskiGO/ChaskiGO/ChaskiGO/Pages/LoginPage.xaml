@@ -5,6 +5,7 @@
              BackgroundColor="{StaticResource ColorPrimary}"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Orientation="Vertical" Padding="30,40">
             <StackLayout.Spacing>
                 <OnPlatform x:TypeArguments="x:Double">
@@ -20,47 +21,62 @@
                     <FileImageSource File="ChaskiGOWhite.png"/>
                 </Image.Source>
             </Image>
-            <Entry Placeholder="Correo Electrónico"
-                   Text="{Binding User.Email}"
+            <Label Text="ChaskiGO te enviará un SMS para verificar tu número de teléfono. Introduce tu número de teléfono y continúa con los siguientes pasos"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Small"
+                   TextColor="White"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   LineBreakMode="WordWrap"/>
+            <Entry Text="Perú"
                    TextColor="White"
                    PlaceholderColor="White"
                    FontSize="18"
-                   FontFamily="{StaticResource RegularFontFamily}"/>
-            <Entry Placeholder="Contraseña"
-                   Text="{Binding User.Password}"
-                   TextColor="White"
-                   PlaceholderColor="White"
-                   FontSize="18"
-                   IsPassword="True"
-                   FontFamily="{StaticResource RegularFontFamily}"/>
-            <Button Text="Iniciar Sesión"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   HorizontalTextAlignment="Center"
+                   IsEnabled="False"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Entry Text="+51"
+                       TextColor="White"
+                       PlaceholderColor="White"
+                       FontSize="18"
+                       FontFamily="{StaticResource RegularFontFamily}"
+                       HorizontalTextAlignment="Center"
+                       WidthRequest="50"
+                       IsEnabled="False"/>
+                <Entry Placeholder="Nro. de Teléfono"
+                       Text="{Binding User.PhoneNumber}"
+                       TextColor="White"
+                       PlaceholderColor="White"
+                       FontSize="18"
+                       FontFamily="{StaticResource RegularFontFamily}"
+                       HorizontalTextAlignment="Start"
+                       Keyboard="Numeric"/>
+            </StackLayout>
+            <Button Text="Siguiente"
                     FontSize="Small"
                     BackgroundColor="White"
                     TextColor="{StaticResource ColorPrimary}"
                     FontFamily="{StaticResource RegularFontFamily}"
                     Margin="0,20,0,0"
-                    Command="{Binding RegisterCommand}"/>
-            <Button Text="Continuar con Facebook"
-                    FontSize="Small"
-                    TextColor="White"
-                    BackgroundColor="{StaticResource CustomBlue}"
-                    FontFamily="{StaticResource RegularFontFamily}"
                     Command="{Binding LoginCommand}"/>
+            <Label Text="Puede que tu operador te cobre por el SMS"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Micro"
+                   TextColor="White"
+                   FontFamily="{StaticResource RegularFontFamily}"
+                   LineBreakMode="WordWrap"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
-                <Label Text="¿No tienes cuenta?"
+                <Label Text="Omitir"
                        TextColor="White"
-                       FontSize="Small"
-                       FontFamily="{StaticResource MediumFontFamily}"/>
-                <Label Text="Registrate"
-                       TextColor="White"
-                       FontSize="Small"
+                       FontSize="Medium"
                        FontFamily="{StaticResource GothamFontFamily}">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                        <TapGestureRecognizer Command="{Binding SkipCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
-            <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" Color="{StaticResource CustomBlue}"/>
+            <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" Color="White"/>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

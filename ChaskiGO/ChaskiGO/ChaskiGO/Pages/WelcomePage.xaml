@@ -22,7 +22,7 @@
                    FontFamily="{StaticResource GothamFontFamily}"
                    VerticalOptions="EndAndExpand"/>
 
-                <Label Text="Bienvenidos a UKU, una plataforma dónde podrás disfrutar una nueva experiencia de aprendizaje."
+                <Label Text="Bienvenidos a ChaskiGO, una plataforma que conecta a tu comunidad en situaciones de riesgo."
                    TextColor="{StaticResource CustomGray}"
                    FontSize="Small"
                    FontFamily="{StaticResource RegularFontFamily}"/>

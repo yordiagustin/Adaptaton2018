@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ChaskiGO.Pages;
+using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 
 namespace ChaskiGO
 {
 	public partial class App : Application
 	{
-		public App ()
+	    public static MobileServiceClient MobileService = new MobileServiceClient("https://chaskigo.azurewebsites.net");
+        public App ()
 		{
 			InitializeComponent();
 

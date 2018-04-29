@@ -1,15 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="ChaskiGO.Pages.AlertsPage"
              Icon="ic_alerts.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Mi Comunidad"
-                   FontSize="Large"
-                   FontFamily="{StaticResource RegularFontFamily}"
-                   TextColor="{StaticResource CustomGray}"
-                   HorizontalTextAlignment="Start"/>
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <maps:Map 
+                x:Name="MyMap"
+                Grid.Row="0"
+                WidthRequest="320"
+                HeightRequest="200"/>
+            <StackLayout Grid.Row="1" BackgroundColor="{StaticResource ColorPrimary}" HeightRequest="50" Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <!--<Image Aspect="AspectFit"
+                                      HeightRequest="30"
+                                      HorizontalOptions="CenterAndExpand"
+                                      VerticalOptions="CenterAndExpand">
+                                   <Image.Source>
+                                       <FileImageSource File="add_contact.png"/>
+                                   </Image.Source>
+                               </Image>-->
+                <Label Text="Reportar Incidencia"
+                       TextColor="White"
+                       FontSize="Medium"
+                       FontFamily="{StaticResource RegularFontFamily}"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="CenterAndExpand"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -8,7 +8,7 @@
         <StackLayout>
             <StackLayout>
                 
-                <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Silver">
+                <ListView x:Name="ContactsList" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Silver">
                     <ListView.Header>
                         <StackLayout Orientation="Vertical" Padding="20">
                             <Label Text="Mi Comunidad"
@@ -23,20 +23,20 @@
                             <ViewCell>
                                 <Grid RowSpacing="0" Padding="10">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="60"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="ic_home.png"
+                                    <Image Source="ic_profile.png"
                                            Aspect="AspectFit"
                                            Grid.Column="0"
                                            HorizontalOptions="Center"/>
                                     <StackLayout Orientation="Vertical" Grid.Column="1">
-                                        <Label Text="Claudia Burgos"
+                                        <Label Text="{Binding Name}"
                                                FontSize="Medium"
                                                TextColor="{StaticResource CustomGray}"
                                                FontFamily="{StaticResource RegularFontFamily}"
                                                HorizontalTextAlignment="Start"/>
-                                        <Label Text="+51 943 695 220"
+                                        <Label Text="{Binding PhoneNumber}"
                                                FontSize="Small"
                                                TextColor="Silver"
                                                FontFamily="{StaticResource RegularFontFamily}"
@@ -47,13 +47,25 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                     <ListView.Footer>
-                           <StackLayout BackgroundColor="{StaticResource ColorPrimary}" HeightRequest="50" Orientation="Horizontal">
+                           <StackLayout BackgroundColor="{StaticResource ColorPrimary}" HeightRequest="50" Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                               <!--<Image Aspect="AspectFit"
+                                      HeightRequest="30"
+                                      HorizontalOptions="CenterAndExpand"
+                                      VerticalOptions="CenterAndExpand">
+                                   <Image.Source>
+                                       <FileImageSource File="add_contact.png"/>
+                                   </Image.Source>
+                               </Image>-->
                                 <Label Text="Añadir Miembro"
                                        TextColor="White"
                                        FontSize="Medium"
                                        FontFamily="{StaticResource RegularFontFamily}"
-                                       HorizontalOptions="CenterAndExpand"
-                                       VerticalOptions="CenterAndExpand"/>
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalOptions="CenterAndExpand"/>
+                               <StackLayout.GestureRecognizers>
+                                   <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"></TapGestureRecognizer>
+                               </StackLayout.GestureRecognizers>
                            </StackLayout>
                     </ListView.Footer>
                 </ListView>
