@@ -19,7 +19,7 @@
                     <FileImageSource File="ChaskiGOWhite.png"/>
                 </Image.Source>
             </Image>
-            <Label Text="ChaskiGO te enviará un SMS para verificar tu número de teléfono. Introduce tu número de teléfono y continúa con los siguientes pasos"
+            <Label Text="ChaskiGO te enviará un SMS para verificar tu número de teléfono. Introduce el código que recibiste y continúa con los siguientes pasos"
                    HorizontalTextAlignment="Center"
                    FontSize="Small"
                    TextColor="White"

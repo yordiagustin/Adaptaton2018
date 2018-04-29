@@ -15,15 +15,20 @@ namespace ChaskiGO.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {
-        public ICommand SosCommand => new Command(async () => await GoSOS());
+        public ICommand SosCommand => new Command(async () => await GoSos());
 
-        private async Task GoSOS()
+        public HomeViewModel(Page page) : base(page)
+        {
+            
+        }
+
+        private async Task GoSos()
         {
             try
             {
                 IsBusy = true;
                 var http = new HttpClient();
-                var url = "http://chaskigoapi20180429091803.azurewebsites.net/api/messaging";
+                var url = "http://chaskigoapi20180429091803.azurewebsites.net/api/emergencies";
 
                 var position = await CrossGeolocator.Current.GetPositionAsync(TimeSpan.FromSeconds(10));
                 var emergencyLongitude = position.Longitude.ToString();

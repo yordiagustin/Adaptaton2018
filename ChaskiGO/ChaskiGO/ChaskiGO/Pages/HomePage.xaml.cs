@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChaskiGO.ViewModels;
 using Plugin.Messaging;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,9 +13,11 @@ namespace ChaskiGO.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class HomePage : ContentPage
 	{
+	    private HomeViewModel viewModel;
 		public HomePage ()
 		{
 			InitializeComponent ();
+		    BindingContext = viewModel = new HomeViewModel(this);
 		}
 
 	    protected override async void OnAppearing()
